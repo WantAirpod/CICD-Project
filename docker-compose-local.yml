@@ -1,0 +1,23 @@
+version: "3.8"
+services:
+  kakao-redis:
+    container_name: kakao-redis
+    build:
+      dockerfile: Dockerfile
+      context: ./redis
+    image: cjy920409/kakao-redis
+    ports:
+      - "6379:6379"
+  kakao-database:
+    container_name: kakao-database
+    build:
+      dockerfile: Dockerfile
+      context: ./database
+    image: cjy920409/kakao-database
+    environment:
+      - MARIADB_DATABASE=kakao
+      - MARIADB_ROOT_PASSWORD=test
+    volumes:
+      - ./databse/config:/etc/mysql/conf.d
+    ports:
+      - "3306:3306"
