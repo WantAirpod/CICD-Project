@@ -49,7 +49,7 @@ tasks.named('asciidoctor') {
 }
 
 bootJar {
-	archiveFileName = 'app.jar'
+	//archiveFileName = 'app.jar'
 	dependsOn asciidoctor
 	copy {
 		// src/docs/asciidoc == from 경로
