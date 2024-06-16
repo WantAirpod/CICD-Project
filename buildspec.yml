@@ -6,13 +6,13 @@ phases:
       java: corretto8
   build:
     commands:
-      - echo Build start on $(date)
+      - echo Build start on 'date'
       - chmod u+x gradlew
       - ./gradlew clean build
   post_build:
     commands:
-      - echo Build completed on $(date)
+      - echo Build completed on 'date'
 artifacts:
   files:
-    - build/libs/board-*.war
+    - build/libs/app-*.war
   discard-paths: yes
