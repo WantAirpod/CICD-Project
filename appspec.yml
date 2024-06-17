@@ -11,9 +11,13 @@ permissions:
     group: ec2-user
 
 hooks:
-  BeforeInstall:
-    - location: deploy-before.sh
+  AfterInstall:
+    - location: startup.sh # 배포 이후에 실행될 스크립트이다.
+      timeout: 60
       runas: ec2-user
-  ApplicationStart:
-    - location: deploy.sh
-      runas: ec2-user
+  #BeforeInstall:
+  #  - location: deploy-before.sh
+  #    runas: ec2-user
+  #ApplicationStart:
+  #  - location: deploy.sh
+  #    runas: ec2-user

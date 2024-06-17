@@ -15,4 +15,6 @@ phases:
 artifacts:
   files:
     - build/libs/*.war
+    - appsepc.yml
+    - startup.sh
   discard-paths: yes
