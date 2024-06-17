@@ -4,7 +4,7 @@
 WAR_NAME="app.war"
 echo "> build 파일명 : " $WAR_NAME >> /home/ec2-user/deploy.log
 
-echo "> buld 파일 복사" >> /home/ec2-user/deploy.log
+echo "> bulid 파일 복사" >> /home/ec2-user/deploy.log
 DEPLOY_PATH=/home/ec2-user/
 cp /home/ec2-user/build/*.war $DEPLOY_PATH
 
@@ -14,7 +14,7 @@ CURRENT_PID=$(pgrep -f $WAR_NAME)
 
 JAVA_OPTS=""
 
-if[ -z $CURRENT_PID]
+if [ -z $CURRENT_PID ]
 then
   echo "> 현재 구동중인 애플리케이션이 없으므로 종료하지 않습니다." >> /home/ec2-user/deploy.log
 else
